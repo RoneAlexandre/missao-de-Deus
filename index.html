@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <title>Missão de Deus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>FAÇA PARTE DESTA MISSÃO</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu">
+                <ul class="nav-links" id="mainNav">
+                    <li><a href="#home" class="nav-link">INÍCIO</a></li>
+                    <li><a href="#story" class="nav-link">QUEM SOU?</a></li>
+                    <li><a href="#mission" class="nav-link">A MISSÃO</a></li>
+                    <li><a href="#biblical" class="nav-link">BASES BÍBLICAS</a></li>
+                    <li><a href="#donate" class="nav-link">COMO FAZER PARTE</a></li>
+                    <li><a href="#contact" class="nav-link">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Bem-vindo!
+                </h1>
+
+                <p class="hero-subtitle">
+                    Junte-se a mim nesta jornada. <br>
+                    Movido pela obediência à ordem de Jesus de cumprir a Grande Comissão
+                    e impulsionado pelo amor de Deus, vamos até os confins da terra.
+                    Esta caminhada não é só minha, é nossa.
+                    Sua oração e sua parceria são fundamentais para que esse propósito se cumpra.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#donate" class="cta-button primary-btn">
+                        <i class="fas fa-hands"></i> Eu quero fazer parte
+                    </a>
+                    <a href="#story" class="cta-button secondary-btn">
+                        <i class="fas fa-book-open"></i> Conheça a missão
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- História -->
+    <section id="story" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">QUEM SOU?</h2>
+                <p class="section-subtitle">OLÁ, ME CHAMO RONE BATISTA</p>
+                <div class="hero-image">
+                    <img src="img/perfil/perfil.jpg" alt="Rone Batista - Missionário" class="profile-photo">
+                </div>
+                <div class="title-decoration"></div>
+            </div>
+
+            <div class="story-intro">
+                <p>Tenho 21 anos, sou estudante de tecnologia e atuo na área do esporte. Cresci em família cristã, porém
+                    até os meus 18 anos eu conhecia somente a história de Jesus, mas não conhecia o Jesus da história.
+                    Foi então que, através de um convite de um amigo, pude conhecer verdadeiramente Cristo, e desde
+                    então, a minha paixão pelo Teu nome vem sendo edificada e amadurecida a cada etapa.</p>
+            </div>
+
+            <!-- Carrossel de Fotos -->
+            <div class="photo-carousel-section">
+                <h3>Minha Jornada em Fotos</h3>
+                <div class="swiper photo-carousel">
+                    <div class="swiper-wrapper">
+                        <!-- SLIDE 1 - QUALQUER FOTO FUNCIONA -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <!-- SUA FOTO AQUI - QUALQUER TAMANHO/TIPO -->
+                                    <img src="./img/carrossel/001.jpg" alt="#" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2 -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <img src="./img/carrossel/002.jpg" alt="#" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3 -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <img src="./img/carrossel/003.jpg" alt="#" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 4 -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <img src="./img/carrossel/004.jpg" alt="04" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 5 -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <img src="./img/carrossel/005.jpg" alt="#" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 6 -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <img src="./img/carrossel/006.jpg" alt="#" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 7 -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <img src="img/carrossel/007.jpg" alt="#" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 8 -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <img src="./img/carrossel/008.jpg" alt="#" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 9 -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <img src="./img/carrossel/009.jpg" alt="#" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 10 -->
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-image">
+                                    <img src="./img/carrossel/010.jpg" alt="#" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navegação do carrossel -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline">
+                <div class="timeline-header">
+                    <h3>OS PRIMEIROS PASSOS</h3>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>COMO SURGIU ?</h4>
+                        <p>Em 2021 conheci a JOCUM (JOVENS COM UMA MISSÃO), um movimento globlal de cristãos de varias
+                            culturas e faixas etárias, unidos em um só propósito: conhecer a Deus e faze-Lo conhecido,
+                            dedicados a servir Jesus em todo o mundo. <br>
+                            Após conhecer e ouvir sobre as experiências de outros missionários, despertou em meu coração
+                            uma
+                            curiosidade, mesmo sendo algo admirável, ainda era distante da minha realidade. <br>
+                            Mas Deus, em Sua graça, estava preparando o terreno para algo que iria redefinir
+                            completamente a minha trajetória.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>A CHAMA</h4>
+                        <p>Desde antes da minha conversão, eu carregava um olhar empático para as vidas, sempre
+                            entusiasmado em conhecer lugares, culturas e visões diferentes. Quando, de fato, conheci os
+                            feitos de Jesus, meu coração ardeu de maneira sobrenatural. Isso me fez compreender a
+                            necessidade urgente e a ordenança que o Senhor nos deu em proclamar o Seu Evangelho,
+                            alcançando os povos não alcançados, até que todos O conheçam.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>O NIKO</h4>
+                        <p>Em um momento de intimidade com o Senhor durante uma viagem, Deus me trouxe o direcionamento
+                            sobre uma escola da JOCUM chamada NIKO. Foi então que comecei a orar e buscar clareza sobre
+                            o que Deus havia ordenado. Após a confirmação clara do Senhor, eu participei do NIKO, onde
+                            despertou evidentemente em meu coração sobre o meu propósito aqui na Terra. <br>
+                            Foi nesses dias de NIKO em que pude compreender verdadeiramente o Extraordinário de Deus
+                            através
+                            do Ordinário, e contempla-lô através da Sua própia criação.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>ESCOLA MISSIONÁRIA DE FÉRIAS</h4>
+                        <p>Alguns meses depois, o Senhor me direcionou a realizar uma outra escola, de um período um
+                            pouco mais longo. Durante o processo de preparação, o Espírito Santo guiou cada detalhe,
+                            mostrando-me com clareza os passos que deveria executar até o momento da partida. <br>
+                            E então, de maneira extraordinária, em cada etapa, em cada necessidade e em cada momento de
+                            dúvida, Deus agiu de forma tangível, confirmando não apenas o momento, mas o propósito
+                            específico que Ele tinha para mim. Era mais do que uma permissão, era uma convocação. <br>
+                            Nesse período de escola, eu pude desfrutar da graça do Senhor, submergindo em Tua presença,
+                            e aprendendo verdadeiramente a ter RELACIONAMENTO com Ele.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item highlight">
+                    <div class="timeline-icon">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>O CONVITE DE DEUS</h4>
+                        <p> Em agosto, eu recebi um direcionamento de Deus a respeito da ETED. Desde então, comecei a
+                            orar e buscar discernimento, e a cada dia o Senhor tem me trazido clareza e confirmações
+                            sobre esse chamado. Pude compreender que o que Ele deseja de mim neste tempo é que eu cumpra
+                            Sua ordenança, sendo capacitado e treinado para conhecer o Seu nome e fazê-lo conhecido.
+                            <br> Reconheço que a missão é de Deus, mas Ele nos convida a fazer parte dela, e esse é o
+                            maior privilégio! Em um momento de intimidade com o Senhor, Ele me entregou uma visão na
+                            qual meu coração queimou com um desespero santo diante da urgência que temos de apresentar o
+                            nome de Cristo aos povos não alcançados. A cada tempo de relacionamento com o Senhor,
+                            compreendo com mais clareza Sua ordenança de cumprirmos a Grande Comissão.
+                            <br> Assim como minha vida foi alcançada e salva por Jesus, meu anseio é que todos também O
+                            conheçam.
+                            <br> O convite de Deus é claro e eu respondo com obediência total à Sua vontade.
+                        </p>
+
+                        <p class="mission-quote">UM PASSO PARA O PREPARO, <br> UM PASSO PARA O ENVIO.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A Missão com Background Especial -->
+    <section id="mission" class="section-padding mission-section special-background">
+        <div class="mission-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">A ETED</h2>
+                <p class="section-subtitle">Conheça o próximo passo em direção a cumprir a ordenança do Senhor !</p>
+            </div>
+
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Localização</h3>
+                    <p>O local para o qual o Senhor me direcionou é a base da:</p>
+                    <div class="mission-location">
+
+                        <div>
+                            <strong>JOCUM CCL</strong>
+                            <span>(Centro de Capacitação de Líderes)</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Duração</h3>
+                    <div class="mission-duration">
+                        <div class="duration-phase">
+                            <h4>Fase teórica (3 meses)</h4>
+                            <h5>Conhecer a Deus</h5>
+                            <p>Um tempo de Treinamento e Aprendizado profundo, com o objetivo
+                                centralizado em Conhecer a Deus, e o Seu amor pela nações.</p>
+                        </div>
+                        <div class="duration-phase">
+                            <h4>Fase prática (2 meses)</h4>
+                            <h5>Faze-lô Conhecido</h5>
+                            <p>Após os meses de treinamento, seremos enviados para onde o Senhor
+                                direcionar, onde iremos aplicar na prática em campo, O Fazendo Conhecido.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>O que é a ETED?</h3>
+                    <p>A Escola de Treinamento e Discipulado é um período de preparação
+                        intencional para o campo missionário, onde somos treinados e discipulados para viver na prática
+                        a missão de Deus e fazer parte do mover d'Ele pelas nações.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bases Bíblicas -->
+    <section id="biblical" class="section-padding biblical-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">BASES BÍBLICAS</h2>
+                <div class="title-decoration"></div>
+            </div>
+
+            <div class="bible-cards">
+                <div class="bible-card">
+                    <div class="bible-icon">
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <div class="bible-content">
+                        <h3>Mateus 28:19-20</h3>
+                        <p class="bible-verse">Portanto, vão e façam discípulos de todas as nações, batizando-os em nome
+                            do Pai e do Filho e do Espírito Santo, ensinando-os a obedecer a tudo o que eu lhes ordenei.
+                            E eu estarei sempre com vocês, até o fim dos tempos.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="bible-card">
+                    <div class="bible-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="bible-content">
+                        <h3>Atos 1:8</h3>
+                        <p class="bible-verse">Mas receberão poder quando o Espírito Santo descer sobre vocês, e serão
+                            minhas testemunhas tanto em Jerusalém como em toda a Judeia e Samaria e até os confins da
+                            terra.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bible-card">
+                    <div class="bible-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="bible-content">
+                        <h3>Romanos 10:14-15</h3>
+                        <p class="bible-verse">Como, pois, invocarão aquele em quem não creram? E como crerão naquele de
+                            quem não ouviram? E como ouvirão, se não há quem pregue? E como pregarão, se não forem
+                            enviados? Como está escrito: 'Quão formosos são os pés dos que anunciam coisas boas!'</p>
+                    </div>
+                </div>
+
+                <div class="bible-card">
+                    <div class="bible-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="bible-content">
+                        <h3>Gênesis 12:1 </h3>
+                        <p class="bible-verse">Então, o Senhor disse a Abrão: - Saia da sua terra, do meio do seus
+                            parentes e da casa do seu pai, e vá para a terra que eu lhe mostrarei.</p>
+                    </div>
+                </div>
+
+                <div class="bible-card">
+                    <div class="bible-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="bible-content">
+                        <h3>Atos 20:24</h3>
+                        <p class="bible-verse">Porém em nada considero a vida preciosa para mim mesmo, desde que eu
+                            complete a minha carreira e o ministério que recebi do Senhor Jesus para testemunhar o
+                            evangelho da graça de Deus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Ajudar -->
+    <section id="donate" class="section-padding section--highlight">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Como fazer parte?</h2>
+                <p class="section-subtitle">Sua contribuição gerará impacto sobre centenas de vidas que serão alcançadas
+                    através do mover de Deus</p>
+                <div class="title-decoration"></div>
+            </div>
+
+            <div class="donation-cards">
+                <div class="donation-card">
+                    <div class="donation-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <h3>ORAÇÃO</h3>
+                    <p class="donation-description">A maneira mais poderosa de contribuir!</p>
+                    <ul class="donation-features">
+                        <li><i class="fas fa-check-circle"></i> A oração tem poder sobrenatural para abrir portas.</li>
+                        <li><i class="fas fa-check-circle"></i> Ore pela provisão e preparação dos corações.</li>
+                    </ul>
+                    <p class="bible-verse">"Não andem ansiosos por coisa alguma, mas em tudo, por meio da oração e da
+                        súplica, com ação de graças, apresentem os seus pedidos a Deus." <br><strong>Filipenses
+                            4:6</strong></p>
+                </div>
+
+                <div class="donation-card">
+                    <div class="donation-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>COMPARTILHAR</h3>
+                    <p class="donation-description">Ajude a espalhar esta missão!</p>
+                    <ul class="donation-features">
+                        <li><i class="fas fa-check-circle"></i> Compartilhe com sua rede de contatos.</li>
+                        <li><i class="fas fa-check-circle"></i> Ajude mais pessoas a conhecerem este movimento.</li>
+                    </ul>
+                </div>
+
+                <div class="donation-card featured">
+                    <div class="donation-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>OFERTAR</h3>
+                    <p class="donation-description">Faça parte desta missão financeiramente</p>
+                    <div class="donation-amount">
+                        <span class="currency">R$</span>
+                        <span class="amount">1,0</span>
+                        <span class="period">/mês</span>
+                    </div>
+                    <ul class="donation-features">
+                        <li><i class="fas fa-check-circle"></i> Suporte para despesas das mensalidades da escola.</li>
+                        <li><i class="fas fa-check-circle"></i> Passagens e despesas da viagem para o prático.</li>
+                    </ul>
+                    <button class="cta-button primary-btn open-payment-modal">
+                        <i class="fas fa-donate"></i> Apoiar Agora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Pagamento -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fas fa-donate"></i> Faça sua Oferta</h2>
+                <p>Escolha a melhor forma de contribuir com esta missão</p>
+            </div>
+
+            <div class="payment-options">
+                <div class="payment-method active" data-method="pix">
+                    <div class="method-header">
+                        <i class="fas fa-qrcode"></i>
+                        <h3>PIX</h3>
+                        <span class="method-badge">Recomendado</span>
+                    </div>
+                    <div class="method-content">
+                        <div class="pix-info">
+                            <div class="pix-qrcode">
+                                <div class="qrcode-placeholder">
+                                    <img src="img/qr/qr.png" alt="QR Code PIX" class="qrcode-img"
+                                        onerror="this.style.display='none'">
+                                    <i class="fas fa-qrcode"></i>
+                                    <span class="qr-label">QR Code PIX</span>
+                                    <small>Escaneie com seu app bancário</small>
+                                </div>
+                            </div>
+                            <div class="pix-details">
+                                <div class="pix-key">
+                                    <h4>Chave PIX (E-MAIL)</h4>
+                                    <div class="key-display">
+                                        <span>ronenamissao@gmail.com</span>
+                                        <button class="copy-btn" data-copy="ronenamissao@gmail.com">
+                                            <i class="fas fa-copy"></i> Copiar
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="pix-instructions">
+                                    <h4>Como usar:</h4>
+                                    <ol>
+                                        <li>Abra o app do seu banco</li>
+                                        <li>Selecione "Pagar com PIX"</li>
+                                        <li>Escaneie o QR Code ou cole a chave</li>
+                                        <li>Confirme o valor e finalize</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal-footer">
+                <p class="confirmation-text">Ao ofertar, você declara estar em acordo com o propósito desta missão.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contato com Background Especial -->
+    <section id="contact" class="section-padding contact-section special-contact-background">
+        <div class="contact-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Fale comigo</h2>
+                <p class="section-subtitle">Ficou com dúvidas? Quer conhecer melhor o propósito? Estou à disposição!</p>
+                <div class="title-decoration"></div>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>E-mail</h4>
+                                <p>ronenamissao@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Telefone/WhatsApp</h4>
+                                <p>(15) 99771-8098</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-connect">
+                        <h4>Conecte-se comigo</h4>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/rone_batistamt/" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/5515997718098?text=Ol%C3%A1!" target="_blank" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ronenamissao@gmail.com&su=Contato%20do%20Site&body=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar."
+                                target="_blank" class="social-link"
+                                aria-label="Enviar email para Ronena Missão (ronenamissao@gmail.com)"
+                                title="Clique para enviar email via Gmail">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form action="https://formsubmit.co/ronenamissao@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nova mensagem do site Missão de Deus">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next"
+                            value="https://ronealexandre.github.io/missao-de-Deus/obrigado.html">
+
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Assunto" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button primary-btn full-width">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+
+
+                    </div>
+                    <p class="footer-mission">CONHECER A DEUS E <br> FAZÊ-LO CONHECIDO</p>
+                    <p>Siga-me nesta jornada de fé e obediência a ordem de Jesus.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p>Receba atualizações sobre a missão <br> em seu e-mail.</p>
+
+                    <form class="newsletter-form" action="https://formsubmit.co/ronenamissao@gmail.com"
+                        method="POST">
+
+                        <!-- CAMPO -->
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Seu e-mail" required>
+
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+
+                        <!-- CONFIGURAÇÕES OCULTAS -->
+                        <input type="hidden" name="_subject" value="Nova inscrição na Newsletter">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://ronealexandre.github.io/missao-de-Deus/obrigado.html">
+
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Missão de Deus</p>
+                <p>Todos os direitos reservados</p>
+                <p class="developer">Desenvolvido com ❤️ por Rone Batista</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</html>
