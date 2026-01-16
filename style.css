@@ -81,7 +81,7 @@ body {
     color: var(--text-secondary);
     line-height: 1.7;
     overflow-x: hidden;
-    background-color: var(--page-bg);
+    background-color: transparent;
 }
 
 
@@ -194,14 +194,21 @@ section[id] {
     position: relative;
     z-index: 3;
     text-align: center;
-    margin-bottom: var(--space-xl);
-    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    padding-bottom: 0;
 }
 
 .section-title {
     font-size: 2.25rem;
     margin-bottom: var(--space-sm);
     color: var(--text-primary);
+}
+
+.section-subtitle {
+    margin: var(--space-md) 0 var(--space-lg) 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
 }
 
 .title-decoration {
@@ -216,6 +223,14 @@ section[id] {
 .photo-carousel-section {
     margin: var(--space-xxl) 0;
     position: relative;
+}
+
+.story-intro {
+    margin-top: var(--space-lg);
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .photo-carousel-section h3 {
@@ -292,7 +307,7 @@ section[id] {
     width: 50px;
     height: 50px;
     border-radius: var(--radius-full);
-    backdrop-filter: blur(10px);
+    background: transparent;
 }
 
 .swiper-button-next:after,
@@ -894,6 +909,7 @@ section[id] {
     display: flex;
     align-items: center;
     gap: var(--space-xs);
+    white-space: nowrap;
 }
 
 .copy-btn:hover {
@@ -1722,6 +1738,17 @@ header {
     box-shadow: 0 0 0 3px rgba(26, 75, 140, 0.1);
 }
 
+/* ===== STORY BACKGROUND WRAPPER ===== */
+.story-background-wrapper {
+    background: #e8e6e1;
+    padding-bottom: var(--space-xl);
+}
+
+/* ===== TIMELINE BACKGROUND WRAPPER ===== */
+.timeline-background-wrapper {
+    background: var(--white);
+}
+
 /* ===== FOOTER ===== */
 .footer {
     background: var(--dark);
@@ -2012,6 +2039,21 @@ h3 {
 
     .key-display {
         flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    .key-display span {
+        word-break: break-all;
+    }
+
+    .copy-btn {
+        width: 100% !important;
+        padding: var(--space-md) var(--space-sm) !important;
+        font-size: 0.9rem !important;
+    }
+
+    .copy-btn i {
+        font-size: 0.85rem !important;
     }
 
     .amount-buttons {
