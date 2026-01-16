@@ -1,31 +1,43 @@
 :root {
     /* ===== CORES PRINCIPAIS ===== */
-    --accent: #1E3A5F;
-    /* azul profundo */
-    --accent-600: #162C47;
-    --accent-100: rgba(30, 58, 95, 0.08);
-    --secondary: #C7A24C;
-    /* dourado suave */
+    --accent: #0B2A3C;
+    /* azul petróleo principal */
+    --accent-600: #071E2C;
+    /* azul petróleo escuro */
+    --accent-100: rgba(11, 42, 60, 0.10);
+    /* azul petróleo claro (overlay) */
+    --secondary: #C4A24A;
+    /* dourado fosco */
 
     /* Paleta base */
-    --page-bg: #FAF9F6;
-    /* off-white quente */
+    --page-bg: #F7F7F5;
+    /* off-white */
     --bg: #FFFFFF;
+    /* branco */
     --surface: #FFFFFF;
-    --border: #E2E1DC;
+    /* branco */
+    --border: #E6E8EB;
+    /* borda leve */
 
     /* Tipografia */
-    --text-primary: #1F2933;
-    --text-secondary: #5F6B7A;
-    --text-muted: #9AA4B2;
+    --text-primary: #0F172A;
+    /* texto principal */
+    --text-secondary: #475569;
+    /* texto secundário */
+    --text-muted: #8A93A3;
+    /* texto suave / legenda */
 
     /* Tons de fundo */
-    --muted: #F3F2EE;
-    /* bege/cinza suave */
+    --muted: #F1F2F3;
+    /* cinza muito suave */
+
+    /* Estados */
+    --success: #16A34A;
+    --error: #DC2626;
 
     /* Gradientes */
-    --gradient-accent: linear-gradient(180deg, #1E3A5F 0%, #162C47 100%);
-    --gradient-secondary: linear-gradient(135deg, #D8BC7A, #C7A24C);
+    --gradient-accent: linear-gradient(180deg, #0B2A3C 0%, #071E2C 100%);
+    --gradient-secondary: linear-gradient(135deg, #C4A24A, rgba(196, 162, 74, 0.14));
 
     /* ===== SOMBRAS, BORDAS E ESPAÇAMENTOS ===== */
     --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
@@ -55,13 +67,13 @@
     /* ===== ALIASES / VARIÁVEIS LEGADAS (compatibilidade) ===== */
     --primary: var(--accent);
     --primary-dark: var(--accent-600);
-    --primary-light: rgba(37, 99, 235, 0.08);
+    --primary-light: var(--accent-100);
     --white: var(--surface);
     --light-gray: var(--border);
-    --lighter-gray: #F5F7F8;
-    /* background principal */
-    --gray: var(--text-secondary, #5F6B7A);
-    --dark: var(--text-primary, #1F2933);
+    --lighter-gray: #F1F2F3;
+    /* background secundário */
+    --gray: var(--text-secondary, #475569);
+    --dark: var(--text-primary, #0F172A);
     --gradient-primary: var(--gradient-accent);
 }
 
@@ -103,11 +115,8 @@ section[id] {
 
 
 .section--highlight {
-    background: linear-gradient(180deg,
-            rgba(30, 58, 95, 0.08),
-            rgba(30, 58, 95, 0.02));
-    border-top: 1px solid rgba(30, 58, 95, 0.12);
-    border-bottom: 1px solid rgba(30, 58, 95, 0.12);
+    background: #D9CBBA;
+    border: none !important;
 }
 
 
@@ -116,10 +125,6 @@ section[id] {
     padding: var(--space-lg) 0;
     background: var(--bg);
     transition: background-color 320ms ease, padding 320ms ease;
-}
-
-.section+.section {
-    border-top: 1px solid var(--border);
 }
 
 .section--alt {
@@ -547,7 +552,7 @@ section[id] {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('caminho/para/sua-imagem-contato.jpg');
+    background-image: url('./img/fundo/004.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1074,7 +1079,7 @@ section[id] {
 
 /* ===== BASES BÍBLICAS ===== */
 .biblical-section {
-    background: var(--lighter-gray);
+    background: #8C7B65;
 }
 
 .bible-cards {
@@ -1139,8 +1144,7 @@ section[id] {
 
 /* ===== HEADER ===== */
 header {
-    /* Fundo translúcido para manter foco no conteúdo e permitir legibilidade */
-    background: rgba(255, 255, 255, 0.8);
+    background: #D9CBBA;
     backdrop-filter: blur(6px);
     color: var(--text-primary);
     padding: calc(var(--space-xs) + 4px) 0;
@@ -1167,7 +1171,7 @@ header {
 
 .logo i {
     font-size: 1.5rem;
-    color: var(--accent);
+    color: #0D0D0D;
 }
 
 /* Menu Mobile */
@@ -1349,7 +1353,7 @@ header {
 .timeline {
     position: relative;
     max-width: 800px;
-    margin: var(--space-xl) auto;
+    margin: 0 auto;
     padding: var(--space-lg) 0;
 }
 
@@ -1357,8 +1361,8 @@ header {
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
+    top: 120px;
+    bottom: 40px;
     width: 4px;
     background: var(--gradient-primary);
     border-radius: 2px;
@@ -1370,8 +1374,9 @@ header {
 }
 
 .timeline-header h3 {
-    color: var(--primary);
+    color: #F2EEEB;
     font-size: 1.8rem;
+    margin: 0px;
 }
 
 .timeline-item {
@@ -1740,13 +1745,13 @@ header {
 
 /* ===== STORY BACKGROUND WRAPPER ===== */
 .story-background-wrapper {
-    background: #e8e6e1;
+    background: #D9CBBA;
     padding-bottom: var(--space-xl);
 }
 
 /* ===== TIMELINE BACKGROUND WRAPPER ===== */
 .timeline-background-wrapper {
-    background: var(--white);
+    background: url('./img/fundo/02.jpg');
 }
 
 /* ===== FOOTER ===== */
