@@ -1,3 +1,21 @@
+// ===== HIDE HEADER ON SCROLL =====
+let lastScrollTop = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrollando para baixo
+        header.classList.add('header-hidden');
+    } else {
+        // Scrollando para cima
+        header.classList.remove('header-hidden');
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+
 // Menu Mobile
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const navMenu = document.querySelector('.nav-menu');
@@ -44,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof Swiper !== 'undefined') {
         const swiper = new Swiper('.photo-carousel', {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 0,
             loop: true,
             autoplay: {
                 delay: 5000,
