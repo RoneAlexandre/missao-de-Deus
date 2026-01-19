@@ -114,7 +114,7 @@ section[id] {
 }
 
 .section--highlight {
-  background: #0D0D0D;
+    background: #0D0D0D;
     border: none !important;
 }
 
@@ -482,7 +482,13 @@ section[id] {
 /* ===== BACKGROUND ESPECIAL PARA SEÇÕES ===== */
 .special-background {
     position: relative;
-    background: url("img/fundo/03.jpg") no-repeat center center;
+    background: linear-gradient(
+  180deg,
+  #9A887D 0%,
+  #081F26 30%,
+  #061A22 55%,
+  #0F1A1F 78%,
+  #121D22 100%);
     background-size: cover;
     color: var(--white);
     overflow: hidden;
@@ -515,14 +521,7 @@ section[id] {
     opacity: 0.1;
 }
 
-.mission-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-}
+
 
 .special-background .section-title,
 .special-background .section-subtitle {
@@ -1030,7 +1029,7 @@ section[id] {
 .donation-card.featured .cta-button.open-payment-modal:hover,
 .donation-card.featured .cta-button.primary-btn.open-payment-modal:hover {
     transform: translateY(-3px);
-    box-shadow: 0 14px 30px rgba(39, 174, 96, 0.18);
+    box-shadow: 0 14px 30px rgba(0, 15, 6, 0.18);
 }
 
 .custom-amount {
@@ -1085,20 +1084,17 @@ section[id] {
 
 /* ===== BASES BÍBLICAS ===== */
 .biblical-section {
-    background: url('./img/fundo/006.jpg') no-repeat center center;
-    background-size: cover;
-    padding: var(--space-xxl) 0;
     position: relative;
+    overflow: hidden;
+    background: url('./img/fundo/003.jpg') center/cover no-repeat;
 }
 
 .biblical-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
+    inset: 0;
+    /* top/left/right/bottom */
+    background: rgba(0, 0, 0, 0.30);
     z-index: 0;
     pointer-events: none;
 }
@@ -1108,10 +1104,11 @@ section[id] {
     z-index: 1;
 }
 
+
 .section-title-biblical {
     font-size: 2.25rem;
     margin-bottom: var(--space-sm);
-    color: var(--secondary);
+    color: var(--white);
 }
 
 /* GRID */
@@ -1181,7 +1178,7 @@ section[id] {
 
 /* ===== HEADER ===== */
 header {
-    background:rgba(10, 15, 20, 0.72);
+    background: rgba(10, 15, 20, 0.72);
     backdrop-filter: blur(10px);
     color: #f8fafc;
     padding: calc(var(--space-xs) + 4px) 0;
@@ -1611,7 +1608,7 @@ header.header-hidden {
 }
 
 .donation-card.featured {
-    border: 2px solid var(--accent);
+    border: 3px solid var(--secondary);
     transform: scale(1.05);
 }
 
@@ -1809,8 +1806,27 @@ header.header-hidden {
 
 /* ===== TIMELINE BACKGROUND WRAPPER ===== */
 .timeline-background-wrapper {
-    background: url('./img/fundo/02.jpg');
+    position: relative; /* ESSENCIAL */
+    overflow: hidden;
+    background: url('./img/fundo/02.jpg') center / cover no-repeat;
 }
+
+/* Overlay escuro */
+.timeline-background-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.30);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Conteúdo acima do overlay */
+.timeline-background-wrapper > * {
+    position: relative;
+    z-index: 1;
+}
+
 
 /* ===== FOOTER ===== */
 .footer {
@@ -2076,8 +2092,7 @@ h3 {
     font-size: 1.75rem;
 }
 
-.mission-card,
-.donation-card {
+.mission-card{
     padding: var(--space-xxl);
 }
 
