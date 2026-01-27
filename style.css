@@ -494,18 +494,22 @@ section[id] {
     overflow: hidden;
 }
 
-/* Corrige cores internas dos cards da seção especial */
-.special-background .mission-card {
-    color: var(--text-primary);
-}
-
+/* Cores dos cards na seção com fundo escuro */
 .special-background .mission-card h3,
-.special-background .mission-card h4 {
-    color: var(--primary);
+.special-background .mission-card h4,
+.special-background .mission-card h5 {
+    color: var(--secondary);
+    font-weight: 600;
 }
 
-.special-background .mission-card p {
-    color: var(--text-secondary);
+.special-background .mission-card p,
+.special-background .mission-card strong,
+.special-background .mission-card span {
+    color: var(--white);
+}
+
+.special-background .mission-location strong {
+    color: var(--secondary);
 }
 
 
@@ -530,13 +534,7 @@ section[id] {
     z-index: 2;
 }
 
-.special-background .mission-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    z-index: 2;
-}
+
 
 /* ===== BACKGROUND ESPECIAL PARA CONTATO ===== */
 .special-contact-background {
@@ -682,8 +680,7 @@ section[id] {
     scrollbar-color: rgba(0, 0, 0, 0.08) transparent;
 }
 
-/* Tornar a barra de rolagem do modal mais discreta em desktops
-   e evitar vazamento do background no topo (background-clip) */
+/* Tornar a barra de rolagem do modal mais discreta em desktops e evitar vazamento do background no topo (background-clip) */
 @media (min-width: 769px) {
     .modal-content {
         /* manter scroll quando necessário, mas usar barra fina */
@@ -1155,15 +1152,7 @@ section[id] {
     text-transform: uppercase;
 }
 
-/* LINHA DISCRETA */
-.bible-content h3::after {
-    content: "";
-    display: block;
-    width: 36px;
-    height: 2px;
-    background: rgba(30, 58, 95, 0.35);
-    margin-top: 10px;
-}
+
 
 /* TEXTO DO VERSÍCULO */
 .bible-verse {
@@ -1280,6 +1269,19 @@ header.header-hidden {
     background: rgba(255, 255, 255, 0.1);
     transform: translateX(5px);
 }
+
+.nav-highlight {
+  color: var(--secondary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-highlight i {
+  font-size: 1rem;
+}
+
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -1507,38 +1509,87 @@ header.header-hidden {
 .mission-cards {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: 150px;
     margin-top: var(--space-xl);
 }
 
 .mission-card {
-    background: var(--white);
-    padding: var(--space-xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 0 0 22px !important;
+    position: relative;
+    text-align: center !important;
+}
+
+/* Linha editorial */
+.mission-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        180deg,
+        var(--secondary),
+        rgba(196, 162, 74, 0.2)
+    );
+}
+
+.mission-card h3,
+.mission-card h4,
+.mission-card h5 {
+    color: var(--text-primary);
+    font-weight: 600;
     text-align: center;
-    transition: transform 0.3s ease;
 }
 
 .mission-card p {
-    color: #2D3748;
-    /* preto elegante (não puro) */
+    color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.7;
     margin-top: 0.75rem;
-
 }
 
 .mission-location {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-    margin-top: 0.75rem;
-    padding-left: 0.75rem;
-    border-left: 3px solid rgba(30, 58, 95, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 16px;
 }
 
+.locations {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.locations li{
+  display: grid;
+  grid-template-columns: 26px auto;
+  align-items: center;
+  column-gap: 12px;
+  justify-content: start;          
+}
+
+.locations img{
+  width: 22px;
+  height: 14px;      
+  object-fit: cover;
+  justify-self: center; 
+  display: block;
+}
+
+.footer-bottom .flag {
+  width: 14px;
+  height: 10px;
+  object-fit: cover;
+  opacity: 0.7;
+}
 
 .mission-location strong {
     display: block;
@@ -1556,21 +1607,18 @@ header.header-hidden {
 }
 
 
-.mission-card:hover {
-    transform: translateY(-10px);
+.mission-icon {
+    margin: 0 auto 14px auto;
+    background: none !important;
+    border: none !important;
+    width: auto;
+    height: auto;
+    text-align: center;
 }
 
-.mission-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--gradient-primary);
-    border-radius: var(--radius-full);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto var(--space-md);
-    color: var(--white);
-    font-size: 1.8rem;
+.mission-icon i {
+    font-size: 1.4rem;
+    opacity: 0.9;
 }
 
 .mission-duration {
@@ -1672,14 +1720,232 @@ header.header-hidden {
     margin-top: var(--space-lg);
 }
 
-/* ===== CONTATO (ATUALIZADO PARA CENTRALIZAR) ===== */
+
+/* ===== CONTATO (card único) — acabamento premium ===== */
+
+#contact .contact-container {
+    margin-top: var(--space-xl);
+}
+
+/* Card principal: glass + profundidade */
+#contact .contact-card {
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 45px 120px rgba(0, 0, 0, 0.28),
+        0 1px 0 rgba(255, 255, 255, 0.75) inset;
+}
+
+/* Assinatura dourada sutil no topo */
+#contact .contact-card::before {
+    content: '';
+    position: absolute;
+    left: 26px;
+    right: 26px;
+    top: 14px;
+    height: 2px;
+    background: linear-gradient(90deg,
+        rgba(196, 162, 74, 0),
+        rgba(196, 162, 74, 0.85),
+        rgba(196, 162, 74, 0)
+    );
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+/* "Brilho" diagonal sutil (quebra template sem chamar atenção) */
+#contact .contact-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.22) 0%,
+        rgba(255, 255, 255, 0) 45%,
+        rgba(11, 42, 60, 0.06) 100%
+    );
+    pointer-events: none;
+}
+
+/* Colunas internas */
+#contact .contact-left,
+#contact .contact-right {
+    padding: 38px 34px 34px;
+    position: relative;
+    z-index: 1;
+}
+
+#contact .contact-right {
+    padding-top: 88px;
+}
+
+/* Divisor: degradê (bem mais elegante que 1px sólido) */
+#contact .contact-left {
+    border-right: none;
+}
+
+#contact .contact-left::after {
+    content: '';
+    position: absolute;
+    top: 68px;
+    bottom: 22px;
+    right: 0;
+    width: 1px;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(15, 23, 42, 0.12),
+        transparent
+    );
+}
+
+/* Tipos: mais editorial */
+#contact .contact-left h3,
+#contact .contact-right h3 {
+    text-align: left;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    margin: 14px 0 18px;
+}
+
+/* Itens de contato mais "clean" */
+#contact .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#contact .contact-item {
+    padding: 20px;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+#contact .contact-item:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+/* Ícones como badge */
+#contact .contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: rgba(11, 42, 60, 0.07);
+    border: 1px solid rgba(11, 42, 60, 0.1);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+#contact .contact-text h4 {
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+
+#contact .contact-text p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Social: menos bolinha, mais componente */
+#contact .social-connect {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#contact .social-connect h4 {
+    margin: 0 0 12px 0;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+#contact .social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#contact .social-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: rgba(11, 42, 60, 0.07);
+    border: 1px solid rgba(11, 42, 60, 0.1);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+}
+
+#contact .social-link:hover {
+    transform: translateY(-2px);
+    background: var(--gradient-accent);
+    border-color: transparent;
+    color: var(--white);
+}
+
+/* Inputs mais premium */
+#contact .form-group {
+    margin-bottom: 14px;
+}
+
+#contact .form-group input,
+#contact .form-group textarea {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    background: rgba(255, 255, 255, 0.613);
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    color: var(--text-primary);
+}
+
+#contact .form-group input::placeholder,
+#contact .form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+#contact .form-group input:focus,
+#contact .form-group textarea:focus {
+    outline: none;
+    border-color: rgba(196, 162, 74, 0.7);
+    box-shadow: 0 0 0 4px rgba(196, 162, 74, 0.18);
+}
+
+/* Botão com acabamento */
+#contact .cta-button.primary-btn.full-width {
+    border-radius: 999px;
+    padding: 14px 18px;
+    box-shadow: 0 20px 55px rgba(7, 30, 44, 0.25);
+}
+
+#contact .cta-button.primary-btn.full-width:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 28px 75px rgba(7, 30, 44, 0.32);
+}
+
 .contact-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-xl);
     margin-top: var(--space-xl);
     justify-items: center;
-    /* Centraliza os itens horizontalmente */
 }
 
 .contact-info {
@@ -1771,8 +2037,8 @@ header.header-hidden {
 .contact-info h3,
 .contact-form h3 {
     text-align: center;
-    /* Centraliza títulos */
     margin-bottom: var(--space-lg);
+    
 }
 
 .form-group {
@@ -1830,8 +2096,8 @@ header.header-hidden {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: var(--dark);
-    color: var(--white);
+    background: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.85);
     padding: 8px 0 var(--space-lg);
 }
 
@@ -1843,11 +2109,21 @@ header.header-hidden {
 }
 
 .footer-column h4 {
-    color: var(--white);
-    margin-bottom: var(--space-md);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary);
 }
 
-
+.footer-end {
+    font-family: var(--font-heading);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-top: 50px;
+    text-align: center;
+}
 
 .footer-mission {
     font-weight: 600;
@@ -1874,32 +2150,60 @@ header.header-hidden {
     color: var(--accent);
 }
 
+.newsletter-form {
+    max-width: 420px;
+}
+
 .newsletter-form .form-group {
     display: flex;
-    gap: var(--space-xs);
-    margin-top: var(--space-md);
+    align-items: center;
+    gap: 10px;
+    padding-top: 8px;
 }
 
 .newsletter-form input {
     flex: 1;
-    padding: var(--space-md);
+    background: transparent;
     border: none;
-    border-radius: var(--radius-md);
+    outline: none;
+    padding: 10px 4px 8px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+
+    /* linha editorial */
+    box-shadow: inset 0 -1px rgba(255, 255, 255, 0.25);
+    transition: box-shadow 0.3s ease;
+}
+
+
+.newsletter-form input:focus {
+    box-shadow: inset 0 -2px var(--secondary);
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.42);
 }
 
 .newsletter-btn {
-    width: 50px;
-    background: var(--gradient-accent);
-    color: var(--white);
+    background: transparent;
     border: none;
-    border-radius: var(--radius-md);
+    color: rgba(196, 162, 74, 0.85);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 6px 4px;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .newsletter-btn:hover {
-    transform: scale(1.1);
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateX(3px);
 }
+
 
 .footer-bottom {
     text-align: center;
@@ -2092,10 +2396,6 @@ h3 {
     font-size: 1.75rem;
 }
 
-.mission-card{
-    padding: var(--space-xxl);
-}
-
 .bible-cards {
     grid-template-columns: 1fr;
 }
@@ -2261,3 +2561,45 @@ section:has(.photo-carousel) {
         font-size: 1.4rem !important;
     }
 }
+
+/* ===== MOBILE: visual mais coeso ===== */
+@media (max-width: 900px) {
+    #contact .contact-card {
+        border-radius: 22px;
+    }
+
+    #contact .contact-left,
+    #contact .contact-right {
+        padding: 28px 22px;
+    }
+
+    /* Divisor vira horizontal, suave */
+    #contact .contact-left::after {
+        top: auto;
+        left: 22px;
+        right: 22px;
+        bottom: 0;
+        width: auto;
+        height: 1px;
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(15, 23, 42, 0.14),
+            transparent
+        );
+    }
+
+    #contact .contact-left h3,
+    #contact .contact-right h3 {
+        text-align: center;
+    }
+
+    #contact .social-links {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
