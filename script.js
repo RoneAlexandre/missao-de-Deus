@@ -83,6 +83,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ===== CONTADOR R$ (0 ⇄ 10.000 LOOP LENTO) =====
+const moneyCounter = document.getElementById('money-counter');
+
+if (moneyCounter) {
+    const target = Number(moneyCounter.dataset.target || 10000);
+    const duration = 6000; // quanto MAIOR, mais lento
+    const pauseTime = 800; // pausa no topo e no zero
+    let started = false;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !started) {
+                started = true;
+                animateUp();
+            }
+        });
+    }, { threshold: 0.4 });
+
+    observer.observe(moneyCounter);
+
+    function animateUp() {
+        const startTime = performance.now();
+
+        function update(time) {
+            const progress = Math.min((time - startTime) / duration, 1);
+            const value = Math.floor(progress * target);
+            moneyCounter.textContent = value.toLocaleString('pt-BR');
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                setTimeout(animateDown, pauseTime);
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    function animateDown() {
+        const startTime = performance.now();
+
+        function update(time) {
+            const progress = Math.min((time - startTime) / duration, 1);
+            const value = Math.floor(target - (progress * target));
+            moneyCounter.textContent = value.toLocaleString('pt-BR');
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                setTimeout(animateUp, pauseTime);
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+}
+    
 
     // ===== MODAL DE PAGAMENTO =====
     const paymentModal = document.getElementById('paymentModal');
@@ -297,6 +354,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
+
+    
+
+
+    
 
     // Observar elementos para animação
     document.querySelectorAll('.timeline-item, .mission-card, .donation-card, .bible-card').forEach(el => {
