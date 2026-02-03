@@ -89,7 +89,7 @@ const moneyCounter = document.getElementById('money-counter');
 if (moneyCounter) {
     const target = Number(moneyCounter.dataset.target || 10000);
     const duration = 6000; // quanto MAIOR, mais lento
-    const pauseTime = 800; // pausa no topo e no zero
+    const pauseTime = 150; // pausa no topo e no zero
     let started = false;
 
     const observer = new IntersectionObserver(entries => {
@@ -400,14 +400,23 @@ if (moneyCounter) {
         newsletterForm.addEventListener('submit', function (e) {
             e.preventDefault();
             const emailInput = this.querySelector('input[type="email"]');
+            const btn = this.querySelector('button');
+            const originalHTML = btn.innerHTML;
 
             if (emailInput.value) {
-                const btn = this.querySelector('button');
-                const originalHTML = btn.innerHTML;
-
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                btn.disabled = true;
 
-                setTimeout(() => {
+                // Coletar dados do formulário
+                const formData = new FormData(this);
+
+                // Enviar dados via fetch
+                fetch('https://formsubmit.co/ajax/ronenamissao@gmail.com', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
                     Swal.fire({
                         title: 'Inscrição Confirmada!',
                         text: 'Você receberá nossas atualizações por e-mail.',
@@ -415,10 +424,21 @@ if (moneyCounter) {
                         confirmButtonText: 'OK',
                         confirmButtonColor: '#27ae60'
                     });
-
                     emailInput.value = '';
                     btn.innerHTML = originalHTML;
-                }, 1000);
+                    btn.disabled = false;
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: 'Houve um erro ao enviar. Tente novamente.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                    btn.innerHTML = originalHTML;
+                    btn.disabled = false;
+                });
             }
         });
     }

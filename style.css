@@ -211,13 +211,21 @@ section[id] {
 
 /* Classes específicas para cada titulo de seção */
 .section-title-story {
-    font-size: 2.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    text-transform: uppercase;
     margin-bottom: var(--space-sm);
     color: var(--accent);
 }
 
 .section-title-donate {
-    font-size: 2.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    text-transform: uppercase;
     margin-bottom: var(--space-sm);
     color: var(--secondary);
 }
@@ -269,7 +277,7 @@ section[id] {
     position: relative;
 }
 
-/* Item do carrossel - layout vertical */
+
 .carousel-item {
     display: flex;
     flex-direction: column;
@@ -277,7 +285,6 @@ section[id] {
     height: 100%;
 }
 
-/* Área da imagem RESPONSIVA */
 .carousel-image {
     flex: 1;
     min-height: 300px;
@@ -289,7 +296,6 @@ section[id] {
     background: transparent;
 }
 
-/* IMAGEM RESPONSIVA - ACEITA QUALQUER TAMANHO */
 .carousel-image img {
     display: block;
     width: 100%;
@@ -305,8 +311,6 @@ section[id] {
     transform: scale(1.05);
 }
 
-
-/* Fundo de fallback se imagem não carregar */
 .carousel-image::before {
     content: '';
     position: absolute;
@@ -349,6 +353,7 @@ section[id] {
     background: var(--accent);
     opacity: 1;
 }
+
 
 /* ===== RESPONSIVIDADE DO CARROSSEL ===== */
 
@@ -1104,8 +1109,11 @@ section[id] {
 
 
 .section-title-biblical {
-    font-size: 2.25rem;
-    margin-bottom: var(--space-sm);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    text-transform: uppercase;
     color: var(--white);
 }
 
@@ -1168,16 +1176,20 @@ section[id] {
 
 /* ===== HEADER ===== */
 header {
-    background: rgba(10, 15, 20, 0.72);
-    backdrop-filter: blur(10px);
+    background: rgba(10, 15, 20, 0.82);
+    backdrop-filter: blur(12px);
     color: #f8fafc;
-    padding: calc(var(--space-xs) + 4px) 0;
+    padding: 0.75rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 header.header-hidden {
@@ -1188,16 +1200,19 @@ header.header-hidden {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .logo i {
@@ -1552,6 +1567,16 @@ header.header-hidden {
     margin-top: 0.75rem;
 }
 
+.mission-card>img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+}
+
 .mission-location {
     display: flex;
     justify-content: center;
@@ -1636,180 +1661,55 @@ header.header-hidden {
     border-bottom: none;
 }
 
-/* ===== PROPÓSITO ===== */
-/* ===== SEÇÃO O CHAMADO (refinado / premium) ===== */
-.chamado-section{
-  position: relative;
-  overflow: hidden;
-  color: var(--text-secondary);
-  background:
-    radial-gradient(900px 480px at 15% 10%, rgba(196,162,74,0.18), transparent 60%),
-    radial-gradient(760px 420px at 85% 30%, rgba(11,42,60,0.16), transparent 60%),
-    linear-gradient(180deg, #F7F7F5 0%, #FFFFFF 60%, #F7F7F5 100%);
+/* ===== SEÇÃO O CHAMADO ===== */
+
+.chamado-section {
+    position: relative;
+    background: #012030;
+    color: var(--white);
 }
 
-/* textura sutil (zero “template”) */
-.chamado-section::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image: radial-gradient(rgba(11,42,60,0.06) 1px, transparent 1px);
-  background-size: 22px 22px;
-  opacity: .35;
-  pointer-events:none;
+.chamado-section .container {
+    position: relative;
 }
 
-/* brilho dourado discreto */
-.chamado-section::after{
-  content:"";
-  position:absolute;
-  width: 540px;
-  height: 540px;
-  right: -220px;
-  top: -240px;
-  background: radial-gradient(circle, rgba(196,162,74,0.22), transparent 62%);
-  filter: blur(2px);
-  pointer-events:none;
+.chamado-section .section-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto;
 }
 
-.chamado-section .container{
-  position: relative;
-  z-index: 1;
+.chamado-section .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 2.9rem);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 14px;
 }
 
-/* Header */
-.chamado-section .section-header{
-  margin-bottom: var(--space-xl);
+.chamado-section .section-subtitle {
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--secondary);
 }
 
-.chamado-section .section-title{
-  font-family: var(--font-heading);
-  font-size: clamp(2.05rem, 4.2vw, 2.8rem);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
+.chamado-content {
+    max-width: 760px;
+    margin: clamp(32px, 4vw, 56px) auto 0;
+    font-size: clamp(1rem, 1.2vw, 1.05rem);
+    line-height: 2;
+    text-align: center;
 }
 
-/* underline “chique” com dourado */
-.chamado-section .section-title::after{
-  content:"";
-  position:absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  width: 86px;
-  height: 3px;
-  border-radius: 99px;
-  background: linear-gradient(90deg, transparent, rgba(196,162,74,0.95), transparent);
-  box-shadow: 0 10px 25px rgba(196,162,74,0.16);
+.chamado-heading {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin: clamp(32px, 4vw, 48px) 0 14px;
 }
-
-/* subtítulo mais “fino” */
-.chamado-section .section-subtitle{
-  margin-top: var(--space-md);
-  color: rgba(71, 85, 105, 0.92);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
-/* Card editorial (conteúdo) */
-.chamado-content{
-  max-width: 860px;
-  margin: 0 auto;
-  padding: clamp(18px, 3vw, 28px);
-  border-radius: 18px;
-  background: rgba(255,255,255,0.72);
-  border: 1px solid rgba(11,42,60,0.12);
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.06),
-    0 1px 0 rgba(255,255,255,0.7) inset;
-  backdrop-filter: blur(10px);
-}
-
-.chamado-content p{
-  margin-bottom: 14px;
-  line-height: 1.95;
-  font-size: 1rem;
-}
-
-/* realce do texto sem gritar */
-.chamado-content strong{
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* “citação”/promessa visual dentro do texto (se você usar <p class="chamado-quote"> ) */
-.chamado-quote{
-  margin: var(--space-lg) 0;
-  padding: 14px 16px 14px 18px;
-  border-left: 3px solid rgba(196,162,74,0.75);
-  background: linear-gradient(90deg, rgba(196,162,74,0.10), transparent 70%);
-  border-radius: 12px;
-  font-style: italic;
-  color: rgba(15, 23, 42, 0.82);
-}
-
-/* divisores editoriais */
-.chamado-divider{
-  width: 54px;
-  height: 2px;
-  margin: var(--space-xl) auto;
-  background: rgba(196,162,74,0.8);
-  border-radius: 99px;
-  opacity: 0.75;
-}
-
-/* headings internos */
-.chamado-heading{
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-align: center;
-  color: rgba(11,42,60,0.88);
-  margin-bottom: var(--space-sm);
-}
-
-/* lista/itens (se você usar) */
-.chamado-list{
-  margin: var(--space-md) 0 0;
-  padding-left: 0;
-  list-style: none;
-  display: grid;
-  gap: 10px;
-}
-
-.chamado-list li{
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(11,42,60,0.05);
-  border: 1px solid rgba(11,42,60,0.08);
-}
-
-.chamado-list li::before{
-  content:"";
-  width: 8px;
-  height: 8px;
-  margin-top: 8px;
-  border-radius: 50%;
-  background: rgba(196,162,74,0.95);
-  box-shadow: 0 10px 20px rgba(196,162,74,0.18);
-}
-
-/* Desktop */
-@media (min-width: 768px){
-  .chamado-content p{
-    font-size: 1.05rem;
-  }
-}
-
-
 
 /* ===== CARDS DE DOAÇÃO ===== */
 .donation-cards {
@@ -1856,8 +1756,15 @@ header.header-hidden {
 }
 
 @keyframes glow {
-    0%, 100% { opacity: 0.9; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.9;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .donation-amount .currency {
@@ -2377,7 +2284,6 @@ header.header-hidden {
     transform: translateX(3px);
 }
 
-
 .footer-bottom {
     text-align: center;
     padding-top: var(--space-lg);
@@ -2396,6 +2302,26 @@ header.header-hidden {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+
+.footer .footer-map{
+  display: block;
+  width: 100%;
+  max-width: 360px;      
+  height: auto;
+  margin: 12px auto 0;
+  border-radius: 10px;
+  opacity: 0.92;
+}
+
+/* Mobile */
+@media (max-width: 480px){
+  .footer .footer-map{
+    max-width: 220px;    
+    margin-top: 8px;
+    border-radius: 8px;
+  }
 }
 
 
@@ -2418,8 +2344,9 @@ header.header-hidden {
 
     .nav-links {
         display: flex;
-        gap: var(--space-md);
+        gap: 1.25rem;
         padding: 0;
+        align-items: center;
     }
 
     .nav-links li {
@@ -2427,7 +2354,50 @@ header.header-hidden {
     }
 
     .nav-link {
-        padding: var(--space-xs) var(--space-sm);
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--secondary);
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: transparent;
+        transform: none;
+        color: var(--secondary);
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .nav-highlight {
+        background: rgba(196, 162, 74, 0.1);
+        border-radius: var(--radius-sm);
+        padding: 0.5rem 1rem !important;
+        border: 1px solid rgba(196, 162, 74, 0.3);
+    }
+
+    .nav-highlight:hover {
+        background: rgba(196, 162, 74, 0.15);
+        color: var(--secondary);
+    }
+
+    .nav-highlight::after {
+        display: none;
     }
 
     /* Hero */
@@ -2582,7 +2552,7 @@ h3 {
 
 @media (max-width: 768px) {
 
-/* Ajustes do modal para mobile */
+    /* Ajustes do modal para mobile */
     .modal-content {
         width: 95vw !important;
         margin: 10px auto !important;
@@ -2634,6 +2604,10 @@ h3 {
     .contact-text p {
         text-align: center;
     }
+
+    .mission-card>img {
+        max-width: 100%;
+    }
 }
 
 /* AJUSTE DO CARROSSEL */
@@ -2649,7 +2623,7 @@ h3 {
 
 /* Slides */
 .photo-carousel .swiper-slide {
-    height: 800px;
+    height: 650px;
 }
 
 .photo-carousel .swiper-pagination {
